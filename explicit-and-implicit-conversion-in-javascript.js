@@ -1,32 +1,26 @@
-/*
-
-Part 1: Debugging Challenge
-The JavaScript code below contains intentional bugs related to type conversion.
-Please do the following:
-  - Run the script to observe unexpected outputs.
-  - Debug and fix the errors using explicit type conversion methods like  Number() ,  String() , or    Boolean()  where necessary.
-  - Annotate the code with comments explaining why the fix works.
-
-Part 2: Write Your Own Examples
-Write their own code that demonstrates:
-  - One example of implicit type conversion.
-  - One example of explicit type conversion.
-
-  *We encourage you to:
-Include at least one edge case, like NaN, undefined, or null .
-Use console.log() to clearly show the before-and-after type conversions.
-
-*/
-
-
-let result = "5" - 2;
+//Task 1:
+let result = Number("5") - 2; //changed "5" to explicit conversion using Number()
 console.log("The result is: " + result);
 
-let isValid = Boolean("false");
-if (isValid) {
+let isValid = Boolean("false"); //"false" does not mean the boolean false, it is a string and written correctly as a string, therefore it is evaluated to true
+if (isValid) {                  //changed "false" === true because the if statements needs it to be a valid statement
     console.log("This is valid!");
 }
 
-let age = "25";
-let totalAge = age + 5;
+let age = Number("25");
+let totalAge = age + 5; //changed "25" to explicit conversion using Number()
 console.log("Total Age: " + totalAge);
+
+
+//Task 2:
+//Implicit type conversion example 
+let total = "17" - 7;//before value is "17"
+console.log(total); //Output 10
+
+let total = Number("17") - 7;//after - value is 17
+console.log(total); //Output 0
+
+//Explicit type conversion
+let value = null; //before - value was null
+let numberValue = Number(value);
+console.log(numberValue); //Output 0
